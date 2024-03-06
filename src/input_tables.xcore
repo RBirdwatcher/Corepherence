@@ -6,9 +6,12 @@ import sdd_domains.*
 annotation "key" as key
 annotation "il_mapping" as il_mapping
 annotation "entity_hierarchy" as entity_hierarchy
+annotation "dep" as dep
+
 class Netted_delta_sensitivities_per_risk_factor_and_tenor_derived {
  	refers Delta_sensitivity []   theDelta_sensitivitys	
- 	refers General_interest_rate_risk_GIRR_factor_for_standardised_approach [1..1] theRisk_factor	
+ 	refers General_interest_rate_risk_GIRR_factor_for_standardised_approach [1..1] theRisk_factor
+ 	@dep ( dep1="General_interest_rate_risk_GIRR_factor_for_standardised_approach.main_currency")	
  	op String  bucket_id()
 	{
           theRisk_factor.main_currency.literal
@@ -29,10 +32,15 @@ class Netted_delta_sensitivities_per_risk_factor_and_tenor_derived {
 				 						}
 				 						total_sensitivities
 	}
+	@dep ( dep1="General_interest_rate_risk_GIRR_factor_for_standardised_approach.risk_factor_for_standardised_approach_uniqueID", 
+		dep2="Delta_sensitivity.tenor"
+	)
  	op String  netted_delta_sensitivities_identifier()
 	{
           theRisk_factor.risk_factor_for_standardised_approach_uniqueID + theDelta_sensitivitys.get(0).tenor.toString
 	}
+	@dep ( dep1="Delta_sensitivity.tenor"
+	)
  	op double  tenor()
 	{
           theDelta_sensitivitys.get(0).tenor
@@ -46,22 +54,28 @@ class Netted_delta_sensitivities_per_risk_factor_and_tenor_derived {
           weighted_GIRR_delta_sensitivity*weighted_GIRR_delta_sensitivity
 	}
 }
+@dep ( dep1="General_interest_rate_risk_GIRR_factor_for_standardised_approach.risk_factor_for_standardised_approach_uniqueID", 
+		dep2="Delta_sensitivity.tenor"
+	)
 class Netted_delta_sensitivities_per_risk_factor_and_tenor_derived_Table {
 	contains  Netted_delta_sensitivities_per_risk_factor_and_tenor_derived [] Netted_delta_sensitivities_per_risk_factor_and_tenor_deriveds 
 	refers Delta_sensitivity_Table 	delta_sensitivity_Table	
 	refers General_interest_rate_risk_GIRR_factor_for_standardised_approach_Table general_interest_rate_risk_GIRR_factor_for_standardised_approach_Table
 	
-	
+	@dep ( dep1="General_interest_rate_risk_GIRR_factor_for_standardised_approach.risk_factor_for_standardised_approach_uniqueID", 
+		dep2="Delta_sensitivity.tenor"
+	)
 	op Netted_delta_sensitivities_per_risk_factor_and_tenor_derived [] Netted_delta_sensitivities_per_risk_factor_and_tenor_deriveds () {
 		var org.eclipse.emf.common.util.EList<Netted_delta_sensitivities_per_risk_factor_and_tenor_derived> Netted_delta_sensitivities_per_risk_factor_and_tenor_derived_temp = new org.eclipse.emf.common.util.BasicEList<Netted_delta_sensitivities_per_risk_factor_and_tenor_derived>		
 		var map = new java.util.HashMap<String, Netted_delta_sensitivities_per_risk_factor_and_tenor_derived>;				
 		for (General_interest_rate_risk_GIRR_factor_for_standardised_approach riskfactor: general_interest_rate_risk_GIRR_factor_for_standardised_approach_Table.general_interest_rate_risk_GIRR_factor_for_standardised_approachs)		
 		{				
 			for(measure: riskfactor.fundamental_review_of_the_trading_book_standard_approach_risk_measure_has_risk_measure_association)				
-			{					
-				if (measure.risk_measure_type == Risk_measure_type_domain.DELTA_SENSITIVITY)					
+			{	
+				var measure_by_product = measure.risk_measure_type_delegate				
+				if (measure_by_product instanceof Delta_sensitivity)					
 				{						
-					var tenor = (measure as Delta_sensitivity).tenor						
+					var tenor = measure_by_product.tenor						
 					var key = riskfactor.toString + tenor.toString						
 					if (!(map.containsKey(key))) 						
 					{							
@@ -71,7 +85,7 @@ class Netted_delta_sensitivities_per_risk_factor_and_tenor_derived_Table {
 						map.put(key,newItem)						
 					} 						
 					var Netted_delta_sensitivities_per_risk_factor_and_tenor_derived1 = map.get(key)						
-					Netted_delta_sensitivities_per_risk_factor_and_tenor_derived1.theDelta_sensitivitys.add(measure as Delta_sensitivity)					
+					Netted_delta_sensitivities_per_risk_factor_and_tenor_derived1.theDelta_sensitivitys.add(measure_by_product)					
 				}				
 				}		
 				}		

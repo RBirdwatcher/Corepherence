@@ -6,15 +6,15 @@
     xmlns:input_tables="input_tables">
   <Security_positions
       xsi:type="input_tables:Long_security_position"
-      Security_or_exchange_tradable_derivative_position_uniqueID="security_position1">
+      Security_identifier="position1">
     <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
-        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#security_DeltaSensitivity1"/>
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_Table.xmi#security_DeltaSensitivity1"/>
     <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
-        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#security_DeltaSensitivity2"/>
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_Table.xmi#security_DeltaSensitivity2"/>
   </Security_positions>
   <Security_positions
       xsi:type="input_tables:Long_security_position"
-      Security_or_exchange_tradable_derivative_position_uniqueID="security_position2">
+      Security_identifier="position2">
     <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
         href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_Table.xmi#security_DeltaSensitivity3"/>
     <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
