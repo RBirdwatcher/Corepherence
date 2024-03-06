@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input_tables:General_interest_rate_risk_GIRR_factor_for_standardised_approach_Table
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:input_tables="input_tables">
+  <General_interest_rate_risk_GIRR_factor_for_standardised_approachs
+      Risk_factor_for_standardised_approach_uniqueID="GIRR_Risk_Factor1"
+      Risk_factor_for_standardised_approach_Reference_date="2018-09-30T00:00:00.000+0100"
+      Risk_factor_for_standardised_approach_Reporting_agent_identifier="BLZ10"
+      Risk_factor_identifier="GIRR_Risk_Factor1"
+      Main_currency="USD"
+      Second_currency="USD">
+    <Fundamental_review_of_the_trading_book_standard_approach_risk_measure_has_risk_measure_association
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity1"/>
+    <Fundamental_review_of_the_trading_book_standard_approach_risk_measure_has_risk_measure_association
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity2"/>
+    <Fundamental_review_of_the_trading_book_standard_approach_risk_measure_has_risk_measure_association
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity3"/>
+  </General_interest_rate_risk_GIRR_factor_for_standardised_approachs>
+  <General_interest_rate_risk_GIRR_factor_for_standardised_approachs
+      Risk_factor_for_standardised_approach_uniqueID="GIRR_Risk_Factor2"
+      Risk_factor_for_standardised_approach_Reference_date="2018-09-30T00:00:00.000+0100"
+      Risk_factor_for_standardised_approach_Reporting_agent_identifier="BLZ10"
+      Risk_factor_identifier="GIRR_Risk_Factor2"
+      Main_currency="USD"
+      Second_currency="USD">
+    <Fundamental_review_of_the_trading_book_standard_approach_risk_measure_has_risk_measure_association
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity4"/>
+  </General_interest_rate_risk_GIRR_factor_for_standardised_approachs>
+</input_tables:General_interest_rate_risk_GIRR_factor_for_standardised_approach_Table>

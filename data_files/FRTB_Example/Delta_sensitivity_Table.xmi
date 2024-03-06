@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input_tables:Delta_sensitivity_Table xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:input_tables="input_tables">
+  <Delta_sensitivitys Risk_measure_type_uniqueID="DeltaSensitivity1" Currency_of_record="USD" Delta_sensitivity="100.0" Tenor="1.0">
+    <containing_measure href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity1"/>
+  </Delta_sensitivitys>
+  <Delta_sensitivitys Risk_measure_type_uniqueID="DeltaSensitivity2" Currency_of_record="USD" Delta_sensitivity="100.0" Tenor="5.0">
+    <containing_measure href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity2"/>
+  </Delta_sensitivitys>
+  <Delta_sensitivitys Risk_measure_type_uniqueID="DeltaSensitivity3" Currency_of_record="USD" Delta_sensitivity="400.0" Tenor="5.0">
+    <containing_measure href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity3"/>
+  </Delta_sensitivitys>
+  <Delta_sensitivitys Risk_measure_type_uniqueID="DeltaSensitivity4" Currency_of_record="USD" Delta_sensitivity="400.0" Tenor="5.0">
+    <containing_measure href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#measure_DeltaSensitivity4"/>
+  </Delta_sensitivitys>
+</input_tables:Delta_sensitivity_Table>

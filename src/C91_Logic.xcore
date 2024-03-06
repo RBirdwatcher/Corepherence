@@ -1,0 +1,277 @@
+package C91_Logic
+import sdd_domains.*
+import input_tables.*
+import output_tables.*
+annotation "dep" as dep
+class C91_UnionItem {
+	refers C91_Base base 
+
+		@dep (dep1="base.Approach_For_Prudential_Purposes")
+ 	op Approach_for_prudential_purposes_domain  Approach_For_Prudential_Purposes()
+ 	{
+		base.Approach_For_Prudential_Purposes()
+	}
+	
+
+
+		@dep (dep1="base.Base")
+ 	op Base_domain  Base()
+ 	{
+		base.Base()
+	}
+	
+
+
+		@dep (dep1="base.Contingent_Scenario")
+ 	op Contingent_Scenario_domain  Contingent_Scenario()
+ 	{
+		base.Contingent_Scenario()
+	}
+	
+
+
+		@dep (dep1="base.Delta_Vega_Or_Curvature_Risk")
+ 	op Delta_Vega_Or_Curvature_Risk_domain  Delta_Vega_Or_Curvature_Risk()
+ 	{
+		base.Delta_Vega_Or_Curvature_Risk()
+	}
+	
+
+
+		@dep (dep1="base.Hypothetical_Value_Under_Specific_Assumptions")
+ 	op boolean  Hypothetical_Value_Under_Specific_Assumptions()
+ 	{
+		base.Hypothetical_Value_Under_Specific_Assumptions()
+	}
+	
+
+
+		@dep (dep1="base.Instrument")
+ 	op Instrument_domain  Instrument()
+ 	{
+		base.Instrument()
+	}
+	
+
+
+		@dep (dep1="base.Main_Catagory")
+ 	op Main_Catagory_domain  Main_Catagory()
+ 	{
+		base.Main_Catagory()
+	}
+	
+
+
+		@dep (dep1="base.Market_Risk_Portfolio")
+ 	op Market_Risk_Portfolio_domain  Market_Risk_Portfolio()
+ 	{
+		base.Market_Risk_Portfolio()
+	}
+	
+
+
+		@dep (dep1="base.Own_Funds_Requirements")
+ 	op double  Own_Funds_Requirements()
+ 	{
+		base.Own_Funds_Requirements()
+	}
+	
+
+
+		@dep (dep1="base.Position_In_The_Instrument")
+ 	op Position_In_The_Instrument_domain  Position_In_The_Instrument()
+ 	{
+		base.Position_In_The_Instrument()
+	}
+	
+
+
+		@dep (dep1="base.Prudential_Portfolio")
+ 	op Prudential_portfolio_domain  Prudential_Portfolio()
+ 	{
+		base.Prudential_Portfolio()
+	}
+	
+
+
+		@dep (dep1="base.Sensitivity_To_Delta_Risk_Factors")
+ 	op double  Sensitivity_To_Delta_Risk_Factors()
+ 	{
+		base.Sensitivity_To_Delta_Risk_Factors()
+	}
+	
+
+
+		@dep (dep1="base.Type_And_Nature_Of_Sensitivity")
+ 	op Type_And_Nature_Of_Sensitivity_domain  Type_And_Nature_Of_Sensitivity()
+ 	{
+		base.Type_And_Nature_Of_Sensitivity()
+	}
+	
+
+
+		@dep (dep1="base.Type_Of_Risk")
+ 	op Type_Of_Risk_domain  Type_Of_Risk()
+ 	{
+		base.Type_Of_Risk()
+	}
+	
+
+}
+class C91_Base {
+	
+		
+ 	op Approach_for_prudential_purposes_domain   Approach_For_Prudential_Purposes()
+	{
+	}
+
+		
+ 	op Base_domain   Base()
+	{
+	}
+
+		
+ 	op Contingent_Scenario_domain   Contingent_Scenario()
+	{
+	}
+
+		
+ 	op Delta_Vega_Or_Curvature_Risk_domain   Delta_Vega_Or_Curvature_Risk()
+	{
+	}
+
+		
+ 	op boolean   Hypothetical_Value_Under_Specific_Assumptions()
+	{
+	return true
+}
+
+		
+ 	op Instrument_domain   Instrument()
+	{
+	}
+
+		
+ 	op Main_Catagory_domain   Main_Catagory()
+	{
+	}
+
+		
+ 	op Market_Risk_Portfolio_domain   Market_Risk_Portfolio()
+	{
+	}
+
+		
+ 	op double   Own_Funds_Requirements()
+	{
+	return 0
+	}
+
+		
+ 	op Position_In_The_Instrument_domain   Position_In_The_Instrument()
+	{
+	}
+
+		
+ 	op Prudential_portfolio_domain   Prudential_Portfolio()
+	{
+	}
+
+		
+ 	op double   Sensitivity_To_Delta_Risk_Factors()
+	{
+	return 0
+	}
+
+		
+ 	op Type_And_Nature_Of_Sensitivity_domain   Type_And_Nature_Of_Sensitivity()
+	{
+	}
+
+		
+ 	op Type_Of_Risk_domain   Type_Of_Risk()
+	{
+	}
+
+}
+
+class C91_UnionTable {
+			 	contains  C91_UnionItem []   C91_UnionItems	
+			 	refers Net_sensitivities_Table  Net_sensitivities_Table
+			 	op C91_UnionItem []   calc_C91_UnionItems() 
+				{
+				 	var items = new org.eclipse.emf.common.util.BasicEList<C91_UnionItem>()
+for(Net_sensitivities item : net_sensitivities_Table.net_sensitivitiess)
+{
+	var newItem = C91_LogicFactory.eINSTANCE.createC91_UnionItem
+	newItem.base = item
+	items.add(newItem)
+}
+				 	return items
+				}
+			 	op String  init() 
+				{
+				 	org.eclipse.efbt.regpot_desktop.orchestrator.Orchestration.init(this) 
+	 	 			this.c91_UnionItems.addAll(calc_C91_UnionItems)
+	 	 			  return null
+				}
+
+			}
+
+class Net_sensitivities  extends C91_Base {
+refers Netted_delta_sensitivities_per_risk_factor_and_tenor_derived netted_delta_sensitivities_per_risk_factor_and_tenor_derived
+op Approach_for_prudential_purposes_domain  Approach_For_Prudential_Purposes() 
+{
+	sdd_domains.Approach_for_prudential_purposes_domain.SENSITIVITIES_BASED_METHOD
+}
+op Base_domain  Base() 
+{
+	sdd_domains.Base_domain.MEMORANDUM_ITEMS
+}
+op Main_Catagory_domain  Main_Catagory() 
+{
+	sdd_domains.Main_Catagory_domain.INSTRUMENTS_SUBJECT_TO_MARKET_RISK
+}
+op Prudential_portfolio_domain  Prudential_Portfolio() 
+{
+	sdd_domains.Prudential_portfolio_domain.TRADING_BOOK_INSTRUMENTS_IN_THE_TRADING_BOOK_AS_DEFINED_IN_ARTICLE_4186_OF_REGULATION_EU_NO_575_2013_
+}
+@dep (dep1="Netted_delta_sensitivities_per_risk_factor_and_tenor_derived.netted_delta_sensitivities")
+op double  Sensitivity_To_Delta_Risk_Factors() 
+{
+	netted_delta_sensitivities_per_risk_factor_and_tenor_derived.netted_delta_sensitivities
+}
+op Type_And_Nature_Of_Sensitivity_domain  Type_And_Nature_Of_Sensitivity() 
+{
+	sdd_domains.Type_And_Nature_Of_Sensitivity_domain.SENSITIVITY_NET_PER_RISK_CLASS_UNWEIGHTED
+}
+}
+
+class Net_sensitivities_Table {
+			 	contains  Net_sensitivities []   Net_sensitivitiess	
+			 	refers Netted_delta_sensitivities_per_risk_factor_and_tenor_derived_Table netted_delta_sensitivities_per_risk_factor_and_tenor_derived_Table
+			 	op Net_sensitivities []   calc_Net_sensitivitiess() 
+				{
+				 	var items = new org.eclipse.emf.common.util.BasicEList<Net_sensitivities>()
+				 	
+				 	
+				 	for (item : netted_delta_sensitivities_per_risk_factor_and_tenor_derived_Table.netted_delta_sensitivities_per_risk_factor_and_tenor_deriveds)
+				 	{
+				 		var new_item = C91_LogicFactory.eINSTANCE.createNet_sensitivities()
+				 		new_item.netted_delta_sensitivities_per_risk_factor_and_tenor_derived = item
+				 		items.add(new_item)				 		
+				 	}
+		 		 	//Join up any refered tables that you need to join
+		 		 	//loop through the main table
+		 		 	//create an item using var newItem = C91_LogicFactory.eINSTANCE.createNet_sensitivities
+		 		 	//set any references you want to on the new Item so that it can refer to themin operations
+		 		 	return items
+				}
+			 	op String  init() 
+				{
+				 	org.eclipse.efbt.regpot_desktop.orchestrator.Orchestration.init(this)
+		 		 	this.net_sensitivitiess.addAll(calc_Net_sensitivitiess) 		 
+		 		 	return null
+				}
+			}
+

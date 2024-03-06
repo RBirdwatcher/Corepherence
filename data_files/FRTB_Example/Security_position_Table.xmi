@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<input_tables:Security_position_Table
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:input_tables="input_tables">
+  <Security_positions
+      xsi:type="input_tables:Long_security_position"
+      Security_or_exchange_tradable_derivative_position_uniqueID="security_position1">
+    <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#security_DeltaSensitivity1"/>
+    <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_Table.xmi#security_DeltaSensitivity2"/>
+  </Security_positions>
+  <Security_positions
+      xsi:type="input_tables:Long_security_position"
+      Security_or_exchange_tradable_derivative_position_uniqueID="security_position2">
+    <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_Table.xmi#security_DeltaSensitivity3"/>
+    <Security_position_specifies_Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_composition
+        href="Fundamental_review_of_the_trading_book_standard_approach_risk_measure_for_security_positions_Table.xmi#security_DeltaSensitivity4"/>
+  </Security_positions>
+</input_tables:Security_position_Table>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="output_tables" nsURI="http://www.eclipse.org/efbt/null" nsPrefix="output_tables">
+  <eClassifiers xsi:type="ecore:EClass" name="C91">
+    <eOperations name="Approach_For_Prudential_Purposes" eType="ecore:EEnum sdd_domains.ecore#//Approach_For_Prudential_Purposes"/>
+    <eOperations name="Base" eType="ecore:EEnum sdd_domains.ecore#//Base"/>
+    <eOperations name="Contingent_Scenario" eType="ecore:EEnum sdd_domains.ecore#//Contingent_Scenario"/>
+    <eOperations name="Delta_Vega_Or_Curvature_Risk" eType="ecore:EEnum sdd_domains.ecore#//Delta_Vega_Or_Curvature_Risk"/>
+    <eOperations name="Hypothetical_Value_Under_Specific_Assumptions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="Instrument" eType="ecore:EEnum sdd_domains.ecore#//Instrument"/>
+    <eOperations name="Main_Catagory" eType="ecore:EEnum sdd_domains.ecore#//Main_Catagory"/>
+    <eOperations name="Market_Risk_Portfolio" eType="ecore:EEnum sdd_domains.ecore#//Market_Risk_Portfolio"/>
+    <eOperations name="Own_Funds_Requirements" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eOperations name="Position_In_The_Instrument" eType="ecore:EEnum sdd_domains.ecore#//Position_In_The_Instrument"/>
+    <eOperations name="Prudential_Portfolio" eType="ecore:EEnum sdd_domains.ecore#//Prudential_Portfolio"/>
+    <eOperations name="Sensitivity_To_Delta_Risk_Factors" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eOperations name="Type_And_Nature_Of_Sensitivity" eType="ecore:EEnum sdd_domains.ecore#//Type_And_Nature_Of_Sensitivity"/>
+    <eOperations name="Type_Of_Risk" eType="ecore:EEnum sdd_domains.ecore#//Type_Of_Risk"/>
+  </eClassifiers>
+</ecore:EPackage>
