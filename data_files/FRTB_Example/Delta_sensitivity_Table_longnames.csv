@@ -1,0 +1,6 @@
+Risk_measure_type_uniqueID,containing_measure,Currency_of_record,Delta_sensitivity,Tenor
+DeltaSensitivity1,measure_DeltaSensitivity1,USD_US_dollar,100.0,1.0
+DeltaSensitivity2,measure_DeltaSensitivity2,USD_US_dollar,100.0,5.0
+DeltaSensitivity3,measure_DeltaSensitivity3,USD_US_dollar,400.0,5.0
+DeltaSensitivity4,measure_DeltaSensitivity4,USD_US_dollar,400.0,5.0
+

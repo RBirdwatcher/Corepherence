@@ -1,0 +1,5 @@
+theDelta_sensitivitys,theRisk_factor,bucket_id,GIRR_delta_risk_weight,netted_delta_sensitivities,netted_delta_sensitivities_identifier,tenor,weighted_GIRR_delta_sensitivity,weighted_GIRR_delta_sensitivity_squared
+multiple_theDelta_sensitivitys,GIRR_Risk_Factor1,USD,0.14,100.0,GIRR_Risk_Factor11.0,1.0,14.000000000000002,196.00000000000006
+multiple_theDelta_sensitivitys,GIRR_Risk_Factor1,USD,0.15,500.0,GIRR_Risk_Factor15.0,5.0,75.0,5625.0
+multiple_theDelta_sensitivitys,GIRR_Risk_Factor2,USD,0.15,400.0,GIRR_Risk_Factor25.0,5.0,60.0,3600.0
+
